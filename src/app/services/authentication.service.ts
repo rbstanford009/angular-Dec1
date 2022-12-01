@@ -15,7 +15,7 @@ export class AuthenticationService {
     );
   }
 
-  authenticate(user) {
+  authenticate(user: { username: string | undefined; password: string | undefined; }) {
     let token;
 
     const foundUser = this.users.find(u =>
@@ -29,7 +29,7 @@ export class AuthenticationService {
     return token;
   }
 
-  storeToken(token) {
+  storeToken(token: string) {
     localStorage.setItem('token', token);
   }
 
@@ -37,7 +37,7 @@ export class AuthenticationService {
     return localStorage.getItem('token');
   }
 
-  storeUsername(username) {
+  storeUsername(username: string) {
     localStorage.setItem('username', username);
   }
 

@@ -14,17 +14,19 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MoviesonlineComponent } from './moviesonline/moviesonline.component';
+// import { HttpService } from './http.service';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+ //   HttpService,
     AppRoutingModule,
     HttpClientModule,
 
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
+
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
@@ -35,9 +37,13 @@ import { MessagesComponent } from './messages/messages.component';
     MoviesComponent,
     MovieDetailComponent,
     MessagesComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
+    MoviesonlineComponent
+
   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
+
+
 

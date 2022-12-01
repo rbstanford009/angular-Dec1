@@ -18,7 +18,8 @@ export class DashboardComponent implements OnInit {
 
   getMovies(): void {
     this.movieService.getMovies()
-      .subscribe(movies => this.movies = movies.slice(1, 5));
+      .subscribe(movies => this.movies = movies.slice(1, 4));  // how many buttons
   }
 }
+
 
